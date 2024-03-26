@@ -61,7 +61,7 @@ def post_vote():
     voter_id = hex(random.getrandbits(64))[2:-1]
     vote = None
 
-    if request.method == 'POST':
+    if request.method == 'PUT':
         vote = request.form['vote']
         data = json.dumps({'voter_id': voter_id, 'vote': vote})
         print("received vote request for '%s' from voter id: '%s'" % (vote, voter_id))
